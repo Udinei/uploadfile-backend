@@ -55,6 +55,18 @@ Clocar o codigo abaixo no arquivo principal App.js ou index.js da aplicação:
 require('dotenv').config();
 ~~~ 
 
+## Configuração de produção
+- Criação do Procfile: Arquivo do heroku para executar a aplicação após deplyy
+Conteúdo:
+~~~
+web: yarn start
+~~~
+- Alteração da porta de conexão do servidor no file index.js (principal da app)
+incluir "PORT" variavel dinamica controlada pelo heroku que informara a porte 
+de execução da app em produção automaticamente apos subir a app.
+~~~
+app.listen(process.env.PORT || 3000) // server vai houvir a porta 3000
+~~~
 # Referências
 Rocketseat: https://www.youtube.com/channel/UCSfwM5u0Kce6Cce8_S72olg
 Vídeo do front-end com ReactJS: https://youtu.be/G5UZmvkLWSQ

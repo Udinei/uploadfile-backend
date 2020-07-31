@@ -35,4 +35,4 @@ app.use(require("./routes"));
 //    return res.send('Hello World');
 //});
 
-app.listen(3000) // server vai houvir a porta 3000
+app.listen(process.env.PORT || 3000) // server vai houvir a porta 3000
